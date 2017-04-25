@@ -14,12 +14,13 @@ while true
       	 	 p "The temperature now is: #{temperature}"
 		end
 		uri = URI.parse(ENV["SENSOR_DATA_URL"]) 
-		response = Net::HTTP.post_form(uri, {"temperature" => temperature})		
-		sleep(10)
-	
+		response = Net::HTTP.post_form(uri, {"temperature" => temperature})
 	rescue => e
 		p e.message
+
 	end
+
+	sleep(60)
 
 end
 
